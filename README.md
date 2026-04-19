@@ -24,10 +24,10 @@ This project was generated using Claude AI artifacts to:
 ## Screenshots
 
 ### Homepage
-![Homepage Screenshot](Homepage.png)
+![Homepage Screenshot](screenshots/Homepage.png)
 
 ### Menu Section
-![Menu Screenshot](Menu.png)
+![Menu Screenshot](screenshots/Menu.png)
 
 ### Contact Section
-![Contact Screenshot](Contact.png)
+![Contact Screenshot](screenshots/Contact.png)
