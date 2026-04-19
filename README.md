@@ -20,3 +20,14 @@ This project was generated using Claude AI artifacts to:
 - Prototype HTML, CSS, and JavaScript quickly
 - Design responsive layouts and user‑friendly UI components
 - Structure project files for GitHub and Netlify deployment
+
+## Screenshots
+
+### Homepage
+![Homepage Screenshot](Homepage.png)
+
+### Menu Section
+![Menu Screenshot](Menu.png)
+
+### Contact Section
+![Contact Screenshot](Contact.png)
