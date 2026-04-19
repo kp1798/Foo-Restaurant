@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Foo Asian Tapas — India's First Pan-Asian Tapas Experience</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#c8102e;--red-dark:#9e0c22;--red-light:#fdf0f2;
+  --gold:#b8860b;--pink:#e8a0b0;
+  --white:#fff;--cream:#fdf8f3;--beige:#f5f0eb;
+  --text:#1a1a1a;--muted:#6b6b6b;--border:#e2d8d0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--text);font-family:'Georgia',serif;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:999;background:var(--white);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 48px;box-shadow:0 2px 16px rgba(0,0,0,.07)}
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-img{height:44px;object-fit:contain}
+.logo-fallback{font-size:26px;font-style:italic;font-weight:700;color:var(--red);letter-spacing:3px;display:none}
+nav ul{list-style:none;display:flex;gap:28px;align-items:center}
+nav ul li a{color:var(--text);text-decoration:none;font-family:'Arial',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;transition:color .3s}
+nav ul li a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff!important;padding:10px 22px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .3s}
+.nav-cta:hover{background:var(--red-dark)!important}
+
+/* HERO */
+#hero{height:100vh;min-height:580px;position:relative;overflow:hidden;margin-top:68px;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#fdf3f5 0%,#fdf8f3 50%,#faf6f0 100%)}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle,#c8102e15 1px,transparent 1px);background-size:28px 28px}
+.petals-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.petal{position:absolute;border-radius:50% 0 50% 0;animation:petfall linear infinite}
+@keyframes petfall{0%{transform:translateY(-30px) rotate(0deg);opacity:.7}100%{transform:translateY(105vh) rotate(450deg);opacity:0}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:820px;padding:0 24px}
+.hero-eyebrow{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:6px;color:var(--red);text-transform:uppercase;margin-bottom:18px;font-weight:700}
+h1.big{font-size:82px;font-weight:400;line-height:1.0;color:var(--text);margin-bottom:18px;font-style:italic}
+h1.big .red{color:var(--red)}
+.hero-sub{font-family:'Arial',sans-serif;font-size:13px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:44px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-fill{background:var(--red);color:#fff;padding:15px 42px;font-family:'Arial',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s;text-decoration:none;display:inline-block}
+.btn-fill:hover{background:var(--red-dark)}
+.btn-ghost{border:2px solid var(--red);color:var(--red);padding:13px 42px;font-family:'Arial',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;background:none;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-ghost:hover{background:var(--red);color:#fff}
+.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);font-family:'Arial',sans-serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;cursor:pointer;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-7px)}}
+
+/* SECTION BASE */
+section{padding:88px 56px}
+.eyebrow{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:6px;color:var(--red);text-transform:uppercase;margin-bottom:10px;font-weight:700}
+.sec-title{font-size:46px;font-weight:400;font-style:italic;color:var(--text);margin-bottom:14px;line-height:1.1}
+.redline{width:48px;height:3px;background:var(--red);margin-bottom:44px}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-box{background:var(--cream);border:1px solid var(--border);padding:52px;text-align:center;position:relative;overflow:hidden;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ab-flower{position:absolute;font-size:150px;opacity:.06;line-height:1}
+.ab-flower:nth-child(1){top:-30px;left:-30px}
+.ab-flower:nth-child(2){bottom:-20px;right:-20px;font-size:90px}
+.ab-year{font-size:76px;font-style:italic;color:var(--red);line-height:1;margin-bottom:8px;position:relative}
+.ab-label{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;position:relative}
+.ab-badge{display:inline-block;background:var(--red);color:#fff;padding:13px 18px;font-family:'Arial',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;margin-top:24px;position:relative}
+.about-body p{color:var(--muted);line-height:2;font-size:15px;margin-bottom:18px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.pillar{padding:18px;background:var(--cream);border-left:3px solid var(--red)}
+.pillar h4{color:var(--red);font-family:'Arial',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:5px;font-weight:700}
+.pillar p{color:var(--muted);font-size:12px;line-height:1.6}
+
+/* MENU SECTION */
+#menu{background:var(--cream)}
+.menu-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:36px}
+.tab{background:none;border:1.5px solid var(--border);color:var(--muted);padding:9px 16px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .25s}
+.tab.active,.tab:hover{border-color:var(--red);color:var(--red);background:var(--red-light)}
+.menu-panel{display:none}
+.menu-panel.active{display:block}
+
+/* SECTION HERO IMAGE */
+.menu-hero{width:100%;height:200px;object-fit:cover;margin-bottom:28px;filter:brightness(.92);border:1px solid var(--border)}
+.menu-hero-wrap{position:relative;margin-bottom:28px}
+.menu-hero-wrap img{width:100%;height:460px;object-fit:cover;object-position:center;filter:brightness(.82);display:block}
+.menu-hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:32px 36px}
+.menu-hero-overlay h3{color:#fff;font-size:36px;font-style:italic;font-weight:400;letter-spacing:1px;margin-bottom:4px}
+.menu-hero-overlay p{color:rgba(255,255,255,.75);font-family:'Arial',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+
+.menu-subhead{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:5px;color:var(--red);text-transform:uppercase;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--red-light);font-weight:700}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(296px,1fr));gap:12px}
+.dish{background:var(--white);padding:18px;border:1px solid var(--border);position:relative;transition:border-color .25s,box-shadow .25s}
+.dish:hover{border-color:var(--red);box-shadow:0 3px 14px rgba(200,16,46,.1)}
+.dish-row{display:flex;gap:8px;align-items:flex-start}
+.dot{width:11px;height:11px;border-radius:2px;flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center}
+.vd{border:1.5px solid #388e3c}.vd::after{content:'';width:5px;height:5px;background:#388e3c;border-radius:50%}
+.nd{border:1.5px solid #d32f2f}.nd::after{content:'';width:5px;height:5px;background:#d32f2f;border-radius:50%}
+.dish-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px}
+.dish-name{font-size:14px;color:var(--text);flex:1;margin-right:6px;line-height:1.3}
+.dish-price{font-family:'Arial',sans-serif;font-size:13px;color:var(--red);font-weight:700;white-space:nowrap}
+.dish-desc{font-family:'Arial',sans-serif;font-size:11.5px;color:var(--muted);line-height:1.55}
+.service-note{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+
+/* ADD ONS */
+.addon-box{background:var(--white);border:1.5px dashed var(--border);padding:20px 24px;margin-top:24px}
+.addon-title{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:14px;font-weight:700}
+.addon-grid{display:flex;flex-wrap:wrap;gap:10px}
+.addon-item{border:1px solid var(--border);padding:10px 18px;font-family:'Arial',sans-serif;font-size:12px;color:var(--text);background:var(--cream)}
+.addon-item strong{color:var(--red)}
+
+/* GF BADGE */
+.gf-badge{display:inline-block;background:#1a7a1a;color:#fff;font-family:'Arial',sans-serif;font-size:9px;letter-spacing:2px;padding:2px 6px;text-transform:uppercase;margin-left:6px;vertical-align:middle;border-radius:2px}
+
+/* LOCATIONS */
+#locations{background:var(--white)}
+.city-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.city-btn{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .25s}
+.city-btn.active,.city-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.loc-card{background:var(--cream);border:1px solid var(--border);padding:26px;transition:border-color .25s,box-shadow .25s}
+.loc-card:hover{border-color:var(--red);box-shadow:0 4px 18px rgba(200,16,46,.1)}
+.loc-city{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:5px;font-weight:700}
+.loc-name{font-size:17px;color:var(--text);margin-bottom:9px}
+.loc-addr{font-family:'Arial',sans-serif;font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.loc-btn{display:inline-flex;align-items:center;gap:5px;font-family:'Arial',sans-serif;font-size:11px;letter-spacing:1.5px;color:#fff;text-transform:uppercase;text-decoration:none;background:var(--red);padding:9px 16px;transition:background .25s}
+.loc-btn:hover{background:var(--red-dark)}
+
+/* RESERVATIONS */
+#reservations{background:var(--cream)}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.res-info p{color:var(--muted);line-height:2;font-size:15px;margin-bottom:24px}
+.info-row{display:flex;gap:12px;margin-bottom:14px}
+.info-icon{color:var(--red);font-size:17px;flex-shrink:0;margin-top:2px}
+.info-label{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:1.5px;color:var(--text);font-weight:700;text-transform:uppercase;margin-bottom:2px}
+.info-val{font-family:'Arial',sans-serif;font-size:12px;color:var(--muted)}
+.res-form{background:var(--white);padding:40px;border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-family:'Arial',sans-serif;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:7px;font-weight:600}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--cream);border:1.5px solid var(--border);color:var(--text);padding:12px 14px;font-family:'Georgia',serif;font-size:13px;outline:none;transition:border-color .25s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sub-btn{width:100%;background:var(--red);color:#fff;border:none;padding:16px;font-family:'Arial',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background .25s;margin-top:6px}
+.sub-btn:hover{background:var(--red-dark)}
+.ok-msg{display:none;background:#e8f5e9;border:1px solid #388e3c;color:#2e7d32;padding:14px;text-align:center;font-family:'Arial',sans-serif;font-size:12px;letter-spacing:1px;margin-top:14px}
+
+/* FOOTER */
+footer{background:#111;color:#fff;padding:56px;text-align:center}
+.ft-logo{height:48px;filter:brightness(10);margin-bottom:14px}
+.ft-tag{font-family:'Arial',sans-serif;font-size:10px;letter-spacing:4px;color:#888;text-transform:uppercase;margin-bottom:36px}
+.ft-links{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-links a{font-family:'Arial',sans-serif;font-size:11px;letter-spacing:1.5px;color:#888;text-decoration:none;text-transform:uppercase;transition:color .25s}
+.ft-links a:hover{color:var(--red)}
+.ft-social{display:flex;justify-content:center;gap:10px;margin-bottom:28px}
+.soc{border:1px solid #333;color:#888;width:40px;height:40px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all .25s}
+.soc:hover{border-color:var(--red);color:var(--red)}
+.ft-copy{font-family:'Arial',sans-serif;font-size:10px;color:#444;letter-spacing:1px}
+
+@media(max-width:768px){
+  nav{padding:0 16px} nav ul{display:none}
+  h1.big{font-size:48px} section{padding:56px 20px}
+  .about-grid,.res-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  footer{padding:40px 20px}
+  .pillars{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <img class="logo-img" id="navLogo" src="https://fooasiantapas.com/images/common/logo.png" alt="Foo Asian Tapas" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'"/>
+    <span id="logoFallback" class="logo-fallback">FOO</span>
+  </div>
+  <ul>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#reservations" class="nav-cta">Reserve a Table</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="petals-wrap" id="petals"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. Mumbai · Pan-Asian Tapas</div>
+    <h1 class="big">Small Plates.<br/><span class="red">Big Asia.</span></h1>
+    <p class="hero-sub">India's First Pan-Asian Tapas Dining Experience</p>
+    <div class="hero-btns">
+      <button class="btn-fill" onclick="navTo('menu')">Explore Menu</button>
+      <button class="btn-ghost" onclick="navTo('reservations')">Reserve a Table</button>
+    </div>
+  </div>
+  <div class="scroll-cue" onclick="navTo('about')">↓ Discover Our Story</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-box" style="position:relative">
+      <div class="ab-flower">🌸</div>
+      <div class="ab-flower">🌸</div>
+      <div class="ab-year">2016</div>
+      <div class="ab-label">Where Foo Began</div>
+      <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--muted);margin-top:16px;margin-bottom:0;line-height:1.8;position:relative;z-index:1">Phoenix Mills, Lower Parel<br/>Mumbai, India</p>
+      <div class="ab-badge">3rd Generation Restaurateurs</div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">Our Story</div>
+      <h2 class="sec-title">Born from a<br/>Family Legacy</h2>
+      <div class="redline"></div>
+      <p>Foo was born from the vision of brothers <strong>Keenan and Ryan Tham</strong> — third-generation restaurateurs from one of Mumbai's most celebrated Asian hospitality families. Their father, Henry Tham, built a legacy of iconic Asian dining in the city. The brothers took that legacy and reimagined it completely.</p>
+      <p>The idea was bold and simple: bring Asia to the table, one small plate at a time. Foo became <strong>India's first Pan-Asian tapas restaurant</strong> — where Japanese, Chinese, Thai, and Southeast Asian flavours could be explored together, shared, and savoured over good conversation.</p>
+      <p>From its first home at Phoenix Mills — with signature cherry blossoms, sake jar décor, and industrial-chic interiors — Foo quickly became a movement spanning 5 cities and 12+ outlets.</p>
+      <div class="pillars">
+        <div class="pillar"><h4>Asian Tapas</h4><p>Small plates designed for sharing and exploring multiple cuisines</p></div>
+        <div class="pillar"><h4>Family Legacy</h4><p>Decades of Asian fine dining excellence from the Tham family</p></div>
+        <div class="pillar"><h4>Pan-Asian Soul</h4><p>Japanese, Chinese, Thai & more — under one roof</p></div>
+        <div class="pillar"><h4>The Vibe</h4><p>Cherry blossoms, arches & industrial chic social dining</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="eyebrow">What We Serve</div>
+  <h2 class="sec-title">The Menu</h2>
+  <div class="redline"></div>
+  <div class="menu-tabs">
+    <button class="tab active" onclick="showTab('soup',this)">Soup</button>
+    <button class="tab" onclick="showTab('salads',this)">Salads</button>
+    <button class="tab" onclick="showTab('sushi',this)">Sushi & More</button>
+    <button class="tab" onclick="showTab('dimsum',this)">Dim Sum</button>
+    <button class="tab" onclick="showTab('small',this)">Small Plates</button>
+    <button class="tab" onclick="showTab('big',this)">Big Plates</button>
+    <button class="tab" onclick="showTab('rice',this)">Rice & Noodles</button>
+    <button class="tab" onclick="showTab('desserts',this)">Desserts</button>
+    <button class="tab" onclick="showTab('jain',this)">Jain Menu</button>
+    <button class="tab" onclick="showTab('gf',this)">🌿 Gluten Free</button>
+    <button class="tab" onclick="showTab('sauces',this)">Foo Sauces</button>
+  </div>
+
+  <!-- ===== SOUP ===== -->
+  <div class="menu-panel active" id="tab-soup">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&q=80" alt="Asian soups" onerror="this.src='https://images.unsplash.com/photo-1555126634-323283e090fa?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Soups</h3><p>Japanese · Thai · Chinese Broths</p></div>
+    </div>
+    <div class="menu-subhead">🟢 Vegetarian</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Miso Soup</span><span class="dish-price">₹335</span></div><div class="dish-desc">Japanese light Miso soup with Tofu, Wakame & Spring onion</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Hot & Sour Soup</span><span class="dish-price">₹385</span></div><div class="dish-desc">Spicy hot & sour with Assorted vegetables, Tofu, Broccoli & Fried garlic</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Rich Sweet Corn Soup</span><span class="dish-price">₹385</span></div><div class="dish-desc">Delicately flavoured with Edamame, Sweet corn & Asparagus</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Udon Clear Soup</span><span class="dish-price">₹365</span></div><div class="dish-desc">Light and fragrant clear udon broth</div></div></div></div>
+    </div>
+    <div class="menu-subhead">🔴 Non-Vegetarian</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Laksa Chicken Soup</span><span class="dish-price">₹395</span></div><div class="dish-desc">Spicy Coconut broth with Chicken, Mushroom, Carrot, Pak choy & Thai chilli</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Tom Yum Prawn Soup</span><span class="dish-price">₹395</span></div><div class="dish-desc">Thai soup with Prawns, Mushroom, Snow peas, Lotus root & Kaffir leaf</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Slow Cooked Lamb Chop Soup</span><span class="dish-price">₹395</span></div><div class="dish-desc">Rich slow-cooked lamb chop broth</div></div></div></div>
+    </div>
+    <div class="addon-box">
+      <div class="addon-title">Add Ons — Customise Your Soup</div>
+      <div class="addon-grid">
+        <div class="addon-item"><strong>Tofu</strong></div>
+        <div class="addon-item"><strong>Chicken</strong></div>
+        <div class="addon-item"><strong>Seafood</strong></div>
+      </div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== SALADS ===== -->
+  <div class="menu-panel" id="tab-salads">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1200&q=80" alt="Asian salads"/>
+      <div class="menu-hero-overlay"><h3>Salads</h3><p>Fresh · Vibrant · Asian Inspired</p></div>
+    </div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Asian Burrata</span><span class="dish-price">₹550</span></div><div class="dish-desc">Burrata, Quinoa, Romaine lettuce & Avocado smears</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">'Super Foo' Salad</span><span class="dish-price">₹550</span></div><div class="dish-desc">Kale, Avocado, Edamame, Quinoa, Chia seeds, Goji berries, Yuzu miso dressing & seasonal fruit</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">The Double A</span><span class="dish-price">₹440</span></div><div class="dish-desc">Arugula & Avocado with a Wasabi punch</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">The Q & A</span><span class="dish-price">₹440</span></div><div class="dish-desc">Quinoa, Almond slivers, Snow peas, Fresh leaves & Chimichurri dressing</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Thai Me Up</span><span class="dish-price">₹440</span></div><div class="dish-desc">Pomegranate, Thai lotus root, Edamame, Glass noodles & Thai chilly dressing</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Som Tum</span><span class="dish-price">₹460</span></div><div class="dish-desc">Shredded raw papaya, Beans, Cherry tomatoes & Som tum dressing</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nutty Sesame Salad</span><span class="dish-price">₹440</span></div><div class="dish-desc">Fresh salad with a rich nutty sesame dressing</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Smoked Duck Salad</span><span class="dish-price">₹550</span></div><div class="dish-desc">Smoked duck, Lemongrass, Lettuce, Peanuts, Corn, Cherry Tomatoes & Thai chilly dressing</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== SUSHI ===== -->
+  <div class="menu-panel" id="tab-sushi">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80" alt="Sushi rolls"/>
+      <div class="menu-hero-overlay"><h3>Sushi & More</h3><p>Uramaki · Maki · Nikkei Rolls</p></div>
+    </div>
+    <div class="menu-subhead">🟢 Veg Rolls</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Yam Bean Uramaki</span><span class="dish-price">₹575</span></div><div class="dish-desc">Blue rice, Yam bean tempura, Avocado & Spicy crisps</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nikkei Avocado Uramaki</span><span class="dish-price">₹595</span></div><div class="dish-desc">Avocado, Aji amarilo sauce & Parmesan</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Truffle Togarashi Black Rice Maki</span><span class="dish-price">₹595</span></div><div class="dish-desc">Black rice, Asparagus, Avocado, Cucumber & Philadelphia cheese</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Shisoto Charcoal Tempura Uramaki</span><span class="dish-price">₹595</span></div><div class="dish-desc">Shisoto tempura, Avocado, Spicy sauce & Filo crisps</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">The Foo Vegan Maki</span><span class="dish-price">₹550</span></div><div class="dish-desc">Black rice, Avocado, Thai chilly, Yam bean, Guacamole & Miso sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Aburi Veg Maki</span><span class="dish-price">₹550</span></div><div class="dish-desc">Avocado, Beetroot, Yam bean, Spicy mayo & Shredded cheese</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Habanero Blue Rice Maki</span><span class="dish-price">₹595</span></div><div class="dish-desc">Signature blue rice with habanero spice</div></div></div></div>
+    </div>
+    <div class="menu-subhead">🔴 Non-Veg Rolls</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Wild Salmon Uramaki</span><span class="dish-price">₹725</span></div><div class="dish-desc">Blue rice, Salmon, Avocado, Guacamole & Spicy cream sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Peruvian Lobster Roll</span><span class="dish-price">₹750</span></div><div class="dish-desc">Lobster tempura, Avocado, Anticucho sauce & Spicy crisps</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nikkei Prawn Tempura Uramaki</span><span class="dish-price">₹695</span></div><div class="dish-desc">Prawn tempura, Avocado, Chimichurri mayo & Coriander oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Californian Roll</span><span class="dish-price">₹595</span></div><div class="dish-desc">Tobiko, Crabmeat, Avocado & Cucumber</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Tuna Maki</span><span class="dish-price">₹695</span></div><div class="dish-desc">Tuna, Avocado, Guacamole & Spicy cream sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Salmon Truffle Maki</span><span class="dish-price">₹725</span></div><div class="dish-desc">Salmon, Truffle, Cream cheese & Jalapeno</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Hamachi Maki</span><span class="dish-price">₹695</span></div><div class="dish-desc">Hamachi, Avocado, Tobanjan, King chilly & Togarashi crisps</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Chipotle Prawn Maki</span><span class="dish-price">₹695</span></div><div class="dish-desc">Smoky chipotle prawn roll</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== DIM SUM ===== -->
+  <div class="menu-panel" id="tab-dimsum">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=1200&q=80" alt="Dim sum dumplings"/>
+      <div class="menu-hero-overlay"><h3>Dim Sum</h3><p>Dumplings · Bao · Gyoza · Cheung Fun</p></div>
+    </div>
+    <div class="menu-subhead">🟢 Veg Dim Sum</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Crispy Spinach Cheung Fun</span><span class="dish-price">₹510</span></div><div class="dish-desc">Rice noodle roll with Spinach, Beans, Pak choy & Tofu</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Wasabi, Truffle & Edamame Dumpling</span><span class="dish-price">₹490</span></div><div class="dish-desc">Edamame & Truffle oil filling</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Tofu Dumpling</span><span class="dish-price">₹440</span></div><div class="dish-desc">Diced Tofu with Basil, Chilli & Oyster sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Cottage Cheese Dumpling</span><span class="dish-price">₹390</span></div><div class="dish-desc">Finely diced Cottage cheese, Chilli & Spinach</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Daikon Peking Chilli Oil Dumpling</span><span class="dish-price">₹390</span></div><div class="dish-desc">Radish, Spring onion, Carrot, Straw & Button mushroom with Chilli oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Crystal Dumpling</span><span class="dish-price">₹410</span></div><div class="dish-desc">Translucent dumpling with Carrot, Waterchestnut, Celery & Coriander</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Corn & Asparagus Dumpling</span><span class="dish-price">₹390</span></div><div class="dish-desc">Finely diced Corn, Asparagus, Thai chilli & Red Chilli</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Farm Vegetable Gyoza</span><span class="dish-price">₹450</span></div><div class="dish-desc">Pak choy, Beans & Cauliflower</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Bao (Mushroom & Pepper)</span><span class="dish-price">₹450</span></div><div class="dish-desc">Chinese buns stuffed with Mushroom, Bell peppers & Onions</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Lotus Root Dumpling</span><span class="dish-price">₹490</span></div><div class="dish-desc">Delicate lotus root filling</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jalapeno & Brie Dumpling</span><span class="dish-price">₹490</span></div><div class="dish-desc">Bold and creamy jalapeno brie filling</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Supreme Veg Bao</span><span class="dish-price">₹450</span></div><div class="dish-desc">Soft Chinese bun with premium vegetable filling</div></div></div></div>
+    </div>
+    <div class="menu-subhead">🔴 Non-Veg Dim Sum</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Chilli Duck Dumpling</span><span class="dish-price">₹500</span></div><div class="dish-desc">Duck, Shimeji & King Mushroom, Lotus root & Chopped chilly with Chilli oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Truffle, Chicken & Prawns Siu Mai</span><span class="dish-price">₹495</span></div><div class="dish-desc">Traditional Cantonese dumpling with Truffle, Chicken & Prawn</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nikkei Gyoza</span><span class="dish-price">₹495</span></div><div class="dish-desc">Pan fried gyoza served with spicy Tomato peanut sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Bao (Spicy Chicken)</span><span class="dish-price">₹510</span></div><div class="dish-desc">Soft Chinese buns with Shiitake mushroom & Chicken</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Crispy Prawn Cheung Fun</span><span class="dish-price">₹570</span></div><div class="dish-desc">Rice noodle roll with Prawns, Carrot, Coriander & Celery</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Charcoal Har Gow, Gold Dust</span><span class="dish-price">₹500</span></div><div class="dish-desc">Black dumpling with Prawns, Carrot, Coriander & Asparagus</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Seafood Peking Dumpling</span><span class="dish-price">₹495</span></div><div class="dish-desc">Spicy seafood peking-style dumpling</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Sriracha Chicken Dumpling</span><span class="dish-price">₹495</span></div><div class="dish-desc">Sriracha marinated Chicken dumpling</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Truffle Lobster Dumpling</span><span class="dish-price">₹550</span></div><div class="dish-desc">Fresh Lobster with Truffle, Bamboo shoot & Waterchestnut</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Thai Chilli, Minced Chicken Dumpling</span><span class="dish-price">₹495</span></div><div class="dish-desc">Thai chilli minced chicken dumpling</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== SMALL PLATES ===== -->
+  <div class="menu-panel" id="tab-small">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=1200&q=80" alt="Asian small plates tapas" onerror="this.src='https://images.unsplash.com/photo-1512003867696-6d5ce6835040?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Small Plates</h3><p>Asian Tapas · Share · Explore</p></div>
+    </div>
+    <div class="menu-subhead">🟢 Veg Small Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Hong Yu Water Chestnut Wonton, Burnt Garlic</span><span class="dish-price">₹545</span></div><div class="dish-desc">Steamed wonton with Chilli oil, Burnt garlic, Coriander & Spring onion</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Crispy Spicy Thai Lotus Root</span><span class="dish-price">₹545</span></div><div class="dish-desc">Crispy fried lotus root with Spring onion, White & Black Sesame seeds</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Spicy Hunan Chilli Baby Potatoes</span><span class="dish-price">₹545</span></div><div class="dish-desc">Fried baby potatoes in Hunan sauce with Dry chillies & Spring onion</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Fresh Cottage Cheese, Foo Chilli Oil</span><span class="dish-price">₹525</span></div><div class="dish-desc">Fresh Cottage cheese in sweet & spicy Chilly oil sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Sizzling Aubergine, Tangy Chilli Bean</span><span class="dish-price">₹445</span></div><div class="dish-desc">Aubergine in Chilibean sauce garnished with Spring onions</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Rich Vegetables Spring Roll, Thai Dip</span><span class="dish-price">₹465</span></div><div class="dish-desc">Crispy spring roll with Pak choy, Cabbage, Babycorn & Singapore sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nikkei Taco — Lotus Root, Guacamole</span><span class="dish-price">₹465</span></div><div class="dish-desc">Hard shell taco with Beans, Lotus root, Peppers in Black pepper sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Edamame with Pod, Maldon Sea Salt</span><span class="dish-price">₹465</span></div><div class="dish-desc">Steamed Edamame with Maldon sea salt</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Golden Fried Mantou Buns</span><span class="dish-price">₹275</span></div><div class="dish-desc">Golden fried Chinese buns</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Super Foo(D) Stir-Fry</span><span class="dish-price">₹505</span></div><div class="dish-desc">Shiitake & Button Mushroom, Broccoli, Snow Peas, Asparagus, Pak Choy & more in Garlic sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Sticky Rice in Lotus Leaf</span><span class="dish-price">₹545</span></div><div class="dish-desc">Fragrant sticky rice wrapped in lotus leaf</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Forest Mushrooms, Cantonese Style</span><span class="dish-price">₹525</span></div><div class="dish-desc">Wild forest mushrooms in Cantonese style</div></div></div></div>
+    </div>
+    <div class="menu-subhead">🔴 Non-Veg Small Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Chilli Chicken</span><span class="dish-price">₹545</span></div><div class="dish-desc">Crispy Chicken, Bell pepper, Onion & Thai chilly in homemade Chilli sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Nikkei Taco — Chicken, Guacamole</span><span class="dish-price">₹465</span></div><div class="dish-desc">Hard shell taco with Chicken in Singapore sauce, Zucchini & Peppers</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Pink Pepper Prawns, 7 Spice</span><span class="dish-price">₹595</span></div><div class="dish-desc">Prawns with Fried garlic, Onions, Chillies & Pink peppercorns</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Sichuan Lamb, Garlic, Chilli</span><span class="dish-price">₹575</span></div><div class="dish-desc">Pan fried Lamb with Fried garlic, Chopped onions & Chillies</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Peking Duck, Pancakes, Plum Sauce</span><span class="dish-price">₹595</span></div><div class="dish-desc">Roasted duck with Pancakes, Plum sauce, Mustard, Leeks & Cucumber</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Deshelled Mud Crab, Singapore Chilli</span><span class="dish-price">₹650</span></div><div class="dish-desc">Crabmeat in Singapore laksa sauce with golden Mantou buns</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Japanese Prawn Tempura, Wasabi Mayo</span><span class="dish-price">₹595</span></div><div class="dish-desc">Light & crispy deep fried Prawns with Wasabi mayo dip</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Golden Sea Bass, Thai Lemon Sauce</span><span class="dish-price">₹850</span></div><div class="dish-desc">Pan fried Seabass with Thai lemon sauce, Coriander & Bird eye chilli</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Soy Glazed Umami Black Cod</span><span class="dish-price">₹950</span></div><div class="dish-desc">Premium Black Cod with soy glaze</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Tenderloin Chilli, Leeks & Onions</span><span class="dish-price">₹575</span></div><div class="dish-desc">Pan fried Tenderloin tossed with Leeks & Onions</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Hakka Belgian Pork Belly</span><span class="dish-price">₹575</span></div><div class="dish-desc">Sliced Belgium pork belly with in-house spicy Chilli sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Mongolian Chicken</span><span class="dish-price">₹545</span></div><div class="dish-desc">Crispy spicy Chicken with Mongolian sauce & Scallions</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== BIG PLATES ===== -->
+  <div class="menu-panel" id="tab-big">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=1200&q=80" alt="Asian curry big plate" onerror="this.src='https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Big Plates</h3><p>Curries · Wok Tossed · Mains</p></div>
+    </div>
+    <div class="menu-subhead">🟢 Veg Big Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Yellow Curry</span><span class="dish-price">₹675</span></div><div class="dish-desc">Best-selling Yellow curry with Waterchestnut, Broccoli, Bell Pepper, Zucchini, Babycorn & Mushroom</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Thai Green Curry, Aubergine, Zucchini</span><span class="dish-price">₹645</span></div><div class="dish-desc">Homemade green curry with Mushroom, Broccoli, French bean, Zucchini & Basil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Mapo Cottage Cheese</span><span class="dish-price">₹645</span></div><div class="dish-desc">Diced Cottage cheese, Scallion, Onion, Broccoli & Bell Pepper in Spicy bean sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Thai Lotus Root, Water Chestnut, Hot Bean Sauce</span><span class="dish-price">₹645</span></div><div class="dish-desc">Lotus root, Onion, Bamboo shoots & Waterchestnut in Hot bean sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Silken Tofu, Zucchini, Chilli Black Bean</span><span class="dish-price">₹645</span></div><div class="dish-desc">Diced Tofu & Zucchini in Chilli black bean sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Assorted Mushrooms, Veg Oyster Sauce</span><span class="dish-price">₹595</span></div><div class="dish-desc">Shiitake & Button mushroom with diced Onion in Veg Oyster sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Snow Peas, Broccoli, Asparagus, French Bean, Chilli Oil</span><span class="dish-price">₹595</span></div><div class="dish-desc">Snow peas, Broccoli, Asparagus & French bean tossed in Chilli oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Wok-Tossed Cantonese Greens, Garlic</span><span class="dish-price">₹595</span></div><div class="dish-desc">French bean, Bell pepper, Pak choy, Snow peas, Edamame & Broccoli stir-fried</div></div></div></div>
+    </div>
+    <div class="menu-subhead">🔴 Non-Veg Big Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Yellow Curry, Chicken</span><span class="dish-price">₹675</span></div><div class="dish-desc">Homemade Yellow curry with Chicken, Mushroom, Carrot & Vegetables</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Hakka Chicken, Mushroom, Pepper, Scallion</span><span class="dish-price">₹645</span></div><div class="dish-desc">Diced Chicken, Shiitake & Button mushroom, Bell pepper, Scallion & Ginger in light Soy</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Sliced Chicken, Foo Chilli Oil</span><span class="dish-price">₹645</span></div><div class="dish-desc">Sliced Chicken, Onion, Scallion & Chillies tossed in Chilli oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Steamed John Dory, Foo Style</span><span class="dish-price">₹695</span></div><div class="dish-desc">Steamed fish with chilli sauce, Thai chilly & Spring onion</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Prawns, Chilli Black Bean</span><span class="dish-price">₹675</span></div><div class="dish-desc">Steamed Prawns in Chilli black bean sauce with Onion & Bell peppers</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Lamb & Scallions</span><span class="dish-price">₹675</span></div><div class="dish-desc">Pan fried Lamb with Scallions, Onion & Sliced chilli in light Soy & Ginger</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Tenderloin, Black Pepper</span><span class="dish-price">₹675</span></div><div class="dish-desc">Pan-fried Tenderloin with Onion & Bell pepper in Black bean sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Belgian Pork, Chilli Bean Sauce</span><span class="dish-price">₹675</span></div><div class="dish-desc">Sliced Belgian pork belly in Chilli bean sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Pan-Fried John Dory, Spicy Miso</span><span class="dish-price">₹695</span></div><div class="dish-desc">Pan fried John Dory with spicy miso sauce</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== RICE & NOODLES ===== -->
+  <div class="menu-panel" id="tab-rice">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?w=1200&q=80" alt="Asian noodles fried rice" onerror="this.src='https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Rice & Noodles</h3><p>Fried Rice · Hakka · Singapore Style</p></div>
+    </div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Blue Butter Japanese Fried Rice</span><span class="dish-price">₹465</span></div><div class="dish-desc">Carrot, Babycorn, Shiitake mushroom in Butter Blue rice</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Truffle & Edamame Garlic Fried Rice</span><span class="dish-price">₹425</span></div><div class="dish-desc">Steamed rice with Snow peas & Edamame with homemade Truffle paste</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Tom Yum Fried Rice</span><span class="dish-price">₹405</span></div><div class="dish-desc">Rice with Tom yum paste, Lemon leaf, Lemon grass, Cherry tomato & Mushroom</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Steamed Jasmine Rice</span><span class="dish-price">₹335</span></div><div class="dish-desc">Perfectly steamed fragrant Jasmine rice</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Hakka Noodles</span><span class="dish-price">₹450</span></div><div class="dish-desc">Noodles with French beans, Bean sprouts, Onion & Pak choy in Soy</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Pan-Fried Noodles</span><span class="dish-price">₹495</span></div><div class="dish-desc">Crispy noodles with Mushroom, Carrot, Vegetables in Butter garlic sauce</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">La Yu Ban Mien Flat Noodles, Garlic</span><span class="dish-price">₹450</span></div><div class="dish-desc">Flat noodles in garlic chilli oil</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Smokey Singapore Style Charcoal Noodles</span><span class="dish-price">₹450</span></div><div class="dish-desc">Signature charcoal noodles, Singapore style</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Wok Tossed Rice Noodles, Vegetables</span><span class="dish-price">₹450</span></div><div class="dish-desc">Wok tossed rice noodles with seasonal vegetables</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Egg Fried Rice</span><span class="dish-price">₹445</span></div><div class="dish-desc">Steamed rice tossed with Egg & Spring onion</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== DESSERTS ===== -->
+  <div class="menu-panel" id="tab-desserts">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1200&q=80" alt="Asian desserts" onerror="this.src='https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Desserts</h3><p>Asian Sweets · Artisan Finishes</p></div>
+    </div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Black Marble Sesame Cheesecake</span><span class="dish-price">₹525</span></div><div class="dish-desc">Signature black marble cheesecake with sesame — a Foo original</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Yuzu Orange Cream Caramel</span><span class="dish-price">₹495</span></div><div class="dish-desc">Delicate yuzu-infused orange cream caramel</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Hazelnut Dome</span><span class="dish-price">₹475</span></div><div class="dish-desc">Rich hazelnut dessert dome</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Snickerz Nut Crunch</span><span class="dish-price">₹475</span></div><div class="dish-desc">Indulgent nut crunch dessert</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== JAIN ===== -->
+  <div class="menu-panel" id="tab-jain">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80" alt="Jain food vegetables" onerror="this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Jain Menu</h3><p>No Onion · No Garlic · No Root Vegetables</p></div>
+    </div>
+    <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--muted);margin-bottom:24px;background:var(--white);padding:14px 18px;border-left:3px solid var(--red);line-height:1.7">All Jain dishes are prepared without onion, garlic, root vegetables, and other prohibited ingredients as per Jain dietary practices.</p>
+    <div class="menu-subhead">Jain Soups</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Miso Soup</span><span class="dish-price">₹305</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Hot & Sour</span><span class="dish-price">₹345</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Rich Sweet Corn</span><span class="dish-price">₹345</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Udon Clear Soup</span><span class="dish-price">₹345</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Salads</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Double A Salad</span><span class="dish-price">₹410</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Q & A Salad</span><span class="dish-price">₹410</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Asian Burrata Salad</span><span class="dish-price">₹520</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain 'Super Foo' Salad</span><span class="dish-price">₹520</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Sushi</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Yam Bean Uramaki</span><span class="dish-price">₹525</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Nikkei Avocado Uramaki</span><span class="dish-price">₹555</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Shisoto Charcoal Tempura Uramaki</span><span class="dish-price">₹555</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Truffle Togarashi Black Rice Maki</span><span class="dish-price">₹555</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Vegan Maki</span><span class="dish-price">₹525</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Dim Sum</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Farm Vegetable Gyoza</span><span class="dish-price">₹410</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Spicy Tofu Dumpling</span><span class="dish-price">₹410</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Cottage Cheese Dumpling</span><span class="dish-price">₹370</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Lotus Root Dumpling</span><span class="dish-price">₹460</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Small Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Edamame with Pod, Sea Salt</span><span class="dish-price">₹435</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Cottage Cheese, Foo Chilly Oil</span><span class="dish-price">₹495</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Rich Vegetables Spring Roll, Thai Dip</span><span class="dish-price">₹415</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Crispy Tofu, Sweet Chilli Sauce</span><span class="dish-price">₹475</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Big Plates</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Water Chestnut, Yellow Curry</span><span class="dish-price">₹645</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Snow Peas, Asparagus, French Beans in Chilly Oil</span><span class="dish-price">₹595</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Mapo Cottage Cheese</span><span class="dish-price">₹645</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Silken Tofu, Zucchini, Chilly Black Bean</span><span class="dish-price">₹645</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Wok Tossed Cantonese Greens</span><span class="dish-price">₹595</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Rice / Noodles</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Butter Japanese Fried Blue Rice</span><span class="dish-price">₹425</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Snow Peas & Edamame Fried Rice</span><span class="dish-price">₹595</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Steamed Jasmine Rice</span><span class="dish-price">₹325</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Hakka Noodles</span><span class="dish-price">₹405</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Pan Fried Noodles</span><span class="dish-price">₹425</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Desserts</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Snickerz</span><span class="dish-price">₹405</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Hazelnut Dome</span><span class="dish-price">₹405</span></div></div></div></div>
+    </div>
+    <div class="menu-subhead">Jain Foo Signature Sauces</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Imperial Sauce</span><span class="dish-price">₹250 / 200g</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Chilli Oil</span><span class="dish-price">₹250 / 200g</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Sichuan Peppercorn Sauce</span><span class="dish-price">₹250 / 200g</span></div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Jain Foo Spicy Chilly Jalapeno</span><span class="dish-price">₹250 / 200g</span></div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== GLUTEN FREE ===== -->
+  <div class="menu-panel" id="tab-gf">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&q=80" alt="Gluten free Asian food"/>
+      <div class="menu-hero-overlay"><h3>🌿 Gluten Free</h3><p>Naturally Gluten-Free · Asian Flavours</p></div>
+    </div>
+    <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--muted);margin-bottom:24px;background:var(--white);padding:14px 18px;border-left:3px solid #1a7a1a;line-height:1.7">All dishes in this section are prepared gluten-free. Please inform your server of any severe gluten allergies before ordering.</p>
+    <div class="menu-subhead">🌿 Gluten Free Soups</div>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Miso Soup <span class="gf-badge">GF</span></span><span class="dish-price">₹335</span></div><div class="dish-desc">Kombu Dashi, Wakame, Tofu & Spring onion</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Hot & Sour Soup <span class="gf-badge">GF</span></span><span class="dish-price">₹385</span></div><div class="dish-desc">Tofu, Broccoli in spicy hot & sour broth</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Rich Sweet Corn Soup <span class="gf-badge">GF</span></span><span class="dish-price">₹385</span></div><div class="dish-desc">Edamame & Asparagus sweet corn broth</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Laksa Chicken Soup <span class="gf-badge">GF</span></span><span class="dish-price">₹395</span></div><div class="dish-desc">Noodles, Pak Choy, Mushroom in spicy coconut broth</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Tom Yum Prawn Soup <span class="gf-badge">GF</span></span><span class="dish-price">₹395</span></div><div class="dish-desc">Snow Peas, Lotus Root, Chilli in Thai prawn broth</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot nd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">GF Pak Choy Mushroom Broth <span class="gf-badge">GF</span></span><span class="dish-price">₹365</span></div><div class="dish-desc">Pak Choy, Mushroom in light Asian broth</div></div></div></div>
+    </div>
+    <div class="addon-box">
+      <div class="addon-title">Add Ons — To Your Gluten Free Soup</div>
+      <div class="addon-grid">
+        <div class="addon-item"><strong>Tofu</strong></div>
+        <div class="addon-item"><strong>Chicken</strong></div>
+        <div class="addon-item"><strong>Seafood</strong></div>
+      </div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+
+  <!-- ===== FOO SAUCES ===== -->
+  <div class="menu-panel" id="tab-sauces">
+    <div class="menu-hero-wrap">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80" alt="Asian sauces condiments" onerror="this.src='https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1200&q=80'"/>
+      <div class="menu-hero-overlay"><h3>Foo Signature Sauces</h3><p>Take the Foo Flavour Home · 200g Jars</p></div>
+    </div>
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.9">Foo's signature sauces are crafted in-house using authentic Pan-Asian recipes — the same sauces that make our dishes unforgettable. Now available to take home in 200g jars. Available in Jain versions too.</p>
+    <div class="menu-grid">
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Imperial Sauce</span><span class="dish-price">₹250 / 200g</span></div><div class="dish-desc">Foo's signature imperial blend — a rich, umami-packed sauce perfect for stir-fries and marinades</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Chilli Oil</span><span class="dish-price">₹250 / 200g</span></div><div class="dish-desc">The iconic Foo Chilli Oil — slow-infused with dried chillis, garlic and Sichuan spices. Drizzle on everything</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Sichuan Peppercorn Sauce</span><span class="dish-price">₹250 / 200g</span></div><div class="dish-desc">Bold, tingly, numbing Sichuan peppercorn blend — a must for spice lovers and hot pot enthusiasts</div></div></div></div>
+      <div class="dish"><div class="dish-row"><div class="dot vd"></div><div style="flex:1"><div class="dish-top"><span class="dish-name">Foo Spicy Chilly Jalapeno</span><span class="dish-price">₹250 / 200g</span></div><div class="dish-desc">Spicy fresh jalapeno sauce with a Foo twist — great as a dip or condiment with dim sum and rolls</div></div></div></div>
+    </div>
+    <p class="service-note">Service Charge & Government Taxes Applicable</p>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="eyebrow">Find Us</div>
+  <h2 class="sec-title">Our Locations</h2>
+  <div class="redline"></div>
+  <div class="city-filter">
+    <button class="city-btn active" onclick="filterCity('all',this)">All Cities</button>
+    <button class="city-btn" onclick="filterCity('mumbai',this)">Mumbai</button>
+    <button class="city-btn" onclick="filterCity('bangalore',this)">Bengaluru</button>
+    <button class="city-btn" onclick="filterCity('hyderabad',this)">Hyderabad</button>
+    <button class="city-btn" onclick="filterCity('pune',this)">Pune</button>
+    <button class="city-btn" onclick="filterCity('ahmedabad',this)">Ahmedabad</button>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Phoenix Mills, Lower Parel</div><div class="loc-addr">Phoenix Palladium, 462 Senapati Bapat Marg, Lower Parel, Mumbai 400013</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Phoenix+Palladium+Lower+Parel+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Bandra West — Linking Road</div><div class="loc-addr">Linking Road, Bandra West, Mumbai 400050</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Linking+Road+Bandra+West+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Churchgate</div><div class="loc-addr">Churchgate, South Mumbai, Mumbai 400020</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Churchgate+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Andheri West — Oshiwara</div><div class="loc-addr">Oshiwara, Andheri West, Mumbai 400053</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Oshiwara+Andheri+West+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">BKC — Jio World Drive</div><div class="loc-addr">Jio World Drive, Bandra Kurla Complex, Mumbai 400051</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Jio+World+Drive+BKC+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Powai</div><div class="loc-addr">Hiranandani Gardens, Powai, Mumbai 400076</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Powai+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Goregaon East</div><div class="loc-addr">Goregaon East, Mumbai 400063</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Goregaon+East+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="mumbai"><div class="loc-city">Mumbai</div><div class="loc-name">Thane</div><div class="loc-addr">Thane, Mumbai Metropolitan Region</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Thane+Mumbai" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="bangalore"><div class="loc-city">Bengaluru</div><div class="loc-name">Brigade Road</div><div class="loc-addr">Brigade Road, Bengaluru, Karnataka</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Brigade+Road+Bengaluru" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="bangalore"><div class="loc-city">Bengaluru</div><div class="loc-name">Rajajinagar</div><div class="loc-addr">Rajajinagar, Bengaluru, Karnataka</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Rajajinagar+Bengaluru" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="hyderabad"><div class="loc-city">Hyderabad</div><div class="loc-name">Madhapur</div><div class="loc-addr">Madhapur, Hyderabad, Telangana</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Madhapur+Hyderabad" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="pune"><div class="loc-city">Pune</div><div class="loc-name">Foo Pune</div><div class="loc-addr">Pune, Maharashtra</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Pune" target="_blank">📍 Get Directions</a></div>
+    <div class="loc-card" data-city="ahmedabad"><div class="loc-city">Ahmedabad</div><div class="loc-name">Thaltej</div><div class="loc-addr">Thaltej, Ahmedabad, Gujarat</div><a class="loc-btn" href="https://www.google.com/maps/search/Foo+Asian+Tapas+Thaltej+Ahmedabad" target="_blank">📍 Get Directions</a></div>
+  </div>
+</section>
+
+<!-- RESERVATIONS -->
+<section id="reservations">
+  <div class="res-grid">
+    <div class="res-info">
+      <div class="eyebrow">Book a Table</div>
+      <h2 class="sec-title">Join the<br/>Tapas Tribe</h2>
+      <div class="redline"></div>
+      <p>Whether it's a weekday lunch, a date night, or a group celebration — Foo is your neighbourhood pit-stop for bold Asian flavours and good conversation over shared plates.</p>
+      <div class="info-row"><div class="info-icon">🕐</div><div><div class="info-label">Lunch</div><div class="info-val">12:00 PM – 3:30 PM</div></div></div>
+      <div class="info-row"><div class="info-icon">🌙</div><div><div class="info-label">Dinner</div><div class="info-val">7:00 PM – 11:00 PM</div></div></div>
+      <div class="info-row"><div class="info-icon">✉️</div><div><div class="info-label">Email</div><div class="info-val">reservations@fooasiantapas.com</div></div></div>
+      <div style="margin-top:28px">
+        <a href="https://orders.fooasiantapas.com/order-online" target="_blank" class="btn-fill" style="display:inline-block">Order Online →</a>
+      </div>
+    </div>
+    <div>
+      <div class="res-form">
+        <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name"/></div>
+        <div class="frow">
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 98XXX XXXXX"/></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
+        </div>
+        <div class="fg"><label>Select Location</label>
+          <select>
+            <option>Choose a Foo outlet</option>
+            <option>Phoenix Mills, Lower Parel — Mumbai</option>
+            <option>Bandra West, Linking Road — Mumbai</option>
+            <option>Churchgate — Mumbai</option>
+            <option>Andheri West, Oshiwara — Mumbai</option>
+            <option>BKC, Jio World Drive — Mumbai</option>
+            <option>Powai — Mumbai</option>
+            <option>Goregaon East — Mumbai</option>
+            <option>Thane</option>
+            <option>Brigade Road — Bengaluru</option>
+            <option>Rajajinagar — Bengaluru</option>
+            <option>Madhapur — Hyderabad</option>
+            <option>Pune</option>
+            <option>Thaltej — Ahmedabad</option>
+          </select>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Date</label><input type="date"/></div>
+          <div class="fg"><label>Time</label>
+            <select>
+              <option>12:00 PM</option><option>12:30 PM</option><option>1:00 PM</option>
+              <option>1:30 PM</option><option>2:00 PM</option><option>2:30 PM</option>
+              <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option>
+              <option>8:30 PM</option><option>9:00 PM</option><option>9:30 PM</option><option>10:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg"><label>Party Size</label>
+          <select>
+            <option>1–2 guests</option><option>3–4 guests</option>
+            <option>5–6 guests</option><option>7–8 guests</option><option>9+ guests</option>
+          </select>
+        </div>
+        <div class="fg"><label>Special Requests</label><textarea rows="3" placeholder="Dietary needs, celebrations, seating preferences..."></textarea></div>
+        <button class="sub-btn" onclick="submitForm()">Reserve My Table</button>
+        <div class="ok-msg" id="okMsg">✅ Reservation received! We'll confirm within 2 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="ft-logo" src="https://fooasiantapas.com/images/common/logo.png" alt="Foo" onerror="this.outerHTML='<div style=font-size:34px;font-style:italic;color:#fff;letter-spacing:4px;margin-bottom:14px>FOO</div>'"/>
+  <p class="ft-tag">India's First Pan-Asian Tapas Experience</p>
+  <div class="ft-links">
+    <a href="#about">Our Story</a>
+    <a href="#menu">Menu</a>
+    <a href="#locations">Locations</a>
+    <a href="#reservations">Reserve a Table</a>
+    <a href="https://orders.fooasiantapas.com/order-online" target="_blank">Order Online</a>
+  </div>
+  <div class="ft-social">
+    <a href="https://www.instagram.com/fooindia/" target="_blank" class="soc" title="Instagram">📸</a>
+    <a href="https://www.facebook.com/fooindia" target="_blank" class="soc" title="Facebook">👍</a>
+  </div>
+  <p class="ft-copy">© 2025 Foo Asian Tapas. A Tham Family Restaurant. All rights reserved.</p>
+</footer>
+
+<script>
+// Falling petals
+(function(){
+  const wrap=document.getElementById('petals');
+  for(let i=0;i<18;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    const size=5+Math.random()*7;
+    p.style.cssText=`left:${Math.random()*100}%;top:${-(20+Math.random()*60)}px;width:${size}px;height:${size}px;animation-duration:${10+Math.random()*14}s;animation-delay:${Math.random()*12}s;opacity:${0.35+Math.random()*0.45};background:${Math.random()>.45?'#e8a0b0':'#c8102e20'}`;
+    wrap.appendChild(p);
+  }
+})();
+
+// FIXED scroll function — avoids conflict with window.scrollTo
+function navTo(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const top=el.getBoundingClientRect().top+window.pageYOffset-70;
+  window.scrollTo({top:top,behavior:'smooth'});
+}
+
+// Menu tabs
+function showTab(id,el){
+  document.querySelectorAll('.menu-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// City filter
+function filterCity(city,el){
+  document.querySelectorAll('.city-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.loc-card').forEach(c=>{
+    c.style.display=(city==='all'||c.dataset.city===city)?'block':'none';
+  });
+}
+
+// Form submit
+function submitForm(){
+  const m=document.getElementById('okMsg');
+  m.style.display='block';
+  setTimeout(()=>m.style.display='none',5000);
+}
+
+// Nav highlight on scroll
+window.addEventListener('scroll',function(){
+  const links=document.querySelectorAll('nav ul li a');
+  ['about','menu','locations','reservations'].forEach(id=>{
+    const s=document.getElementById(id);
+    if(!s)return;
+    const t=s.getBoundingClientRect().top;
+    if(t<=100&&t>-s.offsetHeight+100){
+      links.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+id?'var(--red)':''});
+    }
+  });
+},true);
+</script>
+</body>
+</html>
